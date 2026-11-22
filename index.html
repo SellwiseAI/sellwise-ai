@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#5b35c9" />
+  <meta name="description" content="SellWise AI helps digital entrepreneurs create sales and marketing content." />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles.css" />
+  <title>SellWise AI — Your AI Sales Copilot</title>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="SellWise AI home">
+        <span class="brand-mark">S</span><span>SellWise <small>AI</small></span>
+      </a>
+      <div class="side-label">WORKSPACE</div>
+      <button class="nav-item active" data-view="dashboard"><span>⌂</span> Dashboard</button>
+      <div class="side-label">AI TOOLS</div>
+      <button class="nav-item" data-tool="sales"><span>▤</span> Sales Page AI</button>
+      <button class="nav-item" data-tool="ads"><span>↗</span> Ad Copy AI</button>
+      <button class="nav-item" data-tool="video"><span>▷</span> Video Script AI</button>
+      <button class="nav-item" data-tool="whatsapp"><span>◌</span> WhatsApp Sales AI</button>
+      <button class="nav-item" data-tool="planner"><span>▦</span> Marketing Planner</button>
+      <div class="sidebar-bottom">
+        <button class="nav-item" data-view="settings"><span>⚙</span> AI Settings</button>
+        <div class="plan-card"><span class="plan-dot"></span><b>Starter workspace</b><p>Connect your AI key to begin generating.</p></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <b id="crumb">Dashboard</b></div>
+        <button class="avatar" title="SellWise workspace">SW</button>
+      </header>
+
+      <section class="page" id="dashboardView">
+        <div class="welcome">
+          <div><div class="eyebrow">YOUR DIGITAL SALES COPILOT</div>
+            <h1>Make your next sale <span>smarter.</span></h1>
+            <p>Create persuasive marketing content for your digital products in minutes.</p>
+          </div>
+          <div class="welcome-art" aria-hidden="true"><div class="orb">✦</div><div class="spark s1">✧</div><div class="spark s2">✦</div></div>
+        </div>
+        <div class="notice"><b>Welcome to SellWise AI.</b> This is the first working prototype. Add your AI API key in AI Settings to generate content. Your key is kept in this browser session and is not saved in our database.</div>
+        <div class="section-heading"><div><h2>Your AI workspace</h2><p>Choose a tool to get started.</p></div><span class="pill">5 TOOLS</span></div>
+        <div class="tool-grid">
+          <button class="tool-card" data-tool="sales"><span class="tool-icon purple">▤</span><b>Sales Page AI</b><p>Turn product details into a compelling sales page.</p><span class="card-link">Open tool →</span></button>
+          <button class="tool-card" data-tool="ads"><span class="tool-icon orange">↗</span><b>Ad Copy AI</b><p>Create Facebook and Instagram ad variations.</p><span class="card-link">Open tool →</span></button>
+          <button class="tool-card" data-tool="video"><span class="tool-icon pink">▷</span><b>Video Script AI</b><p>Plan short promotional videos and scenes.</p><span class="card-link">Open tool →</span></button>
+          <button class="tool-card" data-tool="whatsapp"><span class="tool-icon green">◌</span><b>WhatsApp Sales AI</b><p>Write helpful replies and follow-up messages.</p><span class="card-link">Open tool →</span></button>
+          <button class="tool-card" data-tool="planner"><span class="tool-icon blue">▦</span><b>Marketing Planner</b><p>Build a practical marketing action plan.</p><span class="card-link">Open tool →</span></button>
+        </div>
+        <div class="bottom-tip"><span>✦</span><div><b>Better input, better output.</b><p>Tell SellWise who your customers are, what you sell and what makes your offer useful.</p></div></div>
+      </section>
+
+      <section class="page hidden" id="toolView">
+        <button class="back-link" id="backHome">← Back to dashboard</button>
+        <div class="tool-header"><div><div class="eyebrow">SELLWISE AI TOOL</div><h1 id="toolTitle">Sales Page AI</h1><p id="toolSubtitle">Create persuasive content for your digital product.</p></div><span class="tool-icon large purple" id="toolEmoji">▤</span></div>
+        <div class="workspace-grid">
+          <form class="form-panel" id="generatorForm">
+            <label>What are you selling?<input id="productName" required placeholder="e.g. The Beginner's Guide to Budgeting" /></label>
+            <label>Describe your product<textarea id="productDescription" required rows="4" placeholder="What does it teach? What is included? What problem does it solve?"></textarea></label>
+            <div class="two-col">
+              <label>Target audience<input id="audience" placeholder="e.g. Nigerian small business owners" /></label>
+              <label>Price (optional)<input id="price" placeholder="e.g. ₦4,500" /></label>
+            </div>
+            <label>Market / country<input id="market" placeholder="e.g. Nigeria, Ghana, Kenya" /></label>
+            <label id="extraLabel">Extra instructions (optional)<textarea id="extra" rows="3" placeholder="Tone, platform, offer, call to action..."></textarea></label>
+            <button class="primary-btn" type="submit" id="generateBtn"><span>✦</span> Generate content</button>
+            <p class="microcopy">Generation uses your own AI provider API key. Provider usage charges may apply.</p>
+          </form>
+          <div class="result-panel">
+            <div class="result-top"><div><span class="eyebrow">YOUR GENERATED CONTENT</span><h3>Output</h3></div><button class="copy-btn" id="copyBtn" disabled>Copy text</button></div>
+            <div class="result-content" id="result"><div class="empty-state"><div class="empty-icon">✧</div><b>Your content will appear here.</b><p>Complete the form and select Generate content.</p></div></div>
+            <div class="result-footer" id="resultFooter">AI-generated content should be reviewed before publishing.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="page hidden" id="settingsView">
+        <button class="back-link" id="settingsBack">← Back to dashboard</button>
+        <div class="eyebrow">WORKSPACE CONFIGURATION</div><h1>AI Settings</h1>
+        <p class="intro">Connect an AI provider to power your SellWise tools.</p>
+        <div class="settings-panel">
+          <div class="settings-icon">✦</div><h2>Connect your AI provider</h2>
+          <p>For this prototype, SellWise sends your key through our small proxy to the AI provider. It is not stored in a SellWise database. Only use your own key, and do not share it with anyone.</p>
+          <label>AI API key<input id="apiKey" type="password" autocomplete="off" placeholder="Paste your API key here" /></label>
+          <label>AI model<input id="modelName" value="gpt-4o-mini" /></label>
+          <label>SellWise API endpoint<input id="workerUrl" type="url" placeholder="https://your-worker.your-subdomain.workers.dev" /></label>
+          <div class="settings-actions"><button class="primary-btn" id="saveSettings">Save for this session</button><button class="secondary-btn" id="clearSettings">Clear key</button></div>
+          <div id="settingsStatus" class="status-line">No AI connection configured.</div>
+        </div>
+        <div class="security-note"><b>Security note</b><p>This is an early prototype, not yet a production-grade multi-user service. The API key is held in session storage and sent with each generation request. Never put a shared company API key in public frontend code. Before paid public launch, we will add secure accounts, server-side billing controls, abuse prevention and privacy documentation.</p></div>
+      </section>
+      <footer class="footer">© 2026 SellWise AI <span>Built for digital entrepreneurs.</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

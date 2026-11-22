@@ -1,0 +1,12 @@
+{
+  "name": "SellWise AI",
+  "short_name": "SellWise",
+  "description": "Your AI-powered digital sales and marketing assistant.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f6fb",
+  "theme_color": "#5b35c9",
+  "icons": [
+    {"src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
+  ]
+}
